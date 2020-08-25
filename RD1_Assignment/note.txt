@@ -1,0 +1,204 @@
+1.接氣象局api、跨網域ajax資料
+
+https://letswrite.tw/api-cross-domain-node/
+
+
+2.中央氣象局開放資料平臺之資料擷取API
+CWB-0EF10C78-E76B-49E3-BD74-05B21416C3F5
+https://opendata.cwb.gov.tw/dist/opendata-swagger.html#/
+
+
+3.[Javascript] <div> 隱藏法</div>
+https://blog.xuite.net/mangohost/wretch/123102961-%5BJavascript%5D+%3Cdiv%3E+隱藏法%3C%2Fdiv%3E
+
+
+4.JS & JQuery 顯示與隱藏 HTML DIV 的處理
+https://kanchengzxdfgcv.blogspot.com/2019/01/js-jquery-html-div.html
+// document.getElementById("card").style.display="none";
+
+5.Opendata + Webduino ( 網頁前端 )
+https://ithelp.ithome.com.tw/articles/10188594?sc=iThomeR
+
+6.08. Open data 介紹與使用指南
+https://ithelp.ithome.com.tw/articles/10191314
+
+7.
+http://seansharingblog.blogspot.com/2018/04/javascript-get-json.html
+
+8.
+https://creativecoding.in/2020/03/28/讓我們來做個互動天氣地圖吧！（直播筆記）/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+安裝 Composer---MAC
+https://tony915.gitbooks.io/laravel4/content/install/install_composer.html
+
+安裝 Composer---windows
+https://ithelp.ithome.com.tw/articles/10190770
+
+jquery換多張圖
+https://ithelp.ithome.com.tw/questions/10194192
+
+
+<!-- <script>
+    $(function () {
+      $('.card img').mouseover(function () {
+        this.src = this.src.replace(/(.*?)(\/)(\w{4,8})(_\d{1,2})(.jpg)$/, "$1$2colorful$4$5");
+      }).mouseout(function () {
+        this.src = this.src.replace(/(.*?)(\/)(\w{4,8})(_\d{1,2})(.jpg)$/, "$1$2gray$4$5");
+      });
+    });
+  </script> -->
+
+
+
+
+  function clickFunc() {
+            
+      
+      
+    //         var card = document.getAttribute("img1");
+            // document.getElementById("card").style.display="block";
+            // console.log(val);
+            // alert(val);
+            // var show1 = document.getElementById('test1');
+
+            // if (show1.style.display != 'block') { 
+            //     show1.style.display = 'block';
+            //     show2.style.display = 'none';
+            // } else {
+            //     show1.style.display = 'none';
+            //     show2.style.display = 'block';
+            // }
+            // var x = document.getElementsByTagName("img")[0].getAttribute("style");
+            // document.getElementById("card").innerHTML = x;
+        // }
+
+    // window.onload = function() {
+    //         //给selector绑定option点击
+    //         addEventHandle("city", clickFunc);
+    //     }
+
+
+
+    $("#submit").click(function () {
+    //   $.ajax({
+    //     type: "GET",
+    //     url: "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-0EF10C78-E76B-49E3-BD74-05B21416C3F5&format=JSON",
+    //     dataType: "json",
+    //     data: {
+    //       "success": "true",
+    //       "result": {
+    //         "resource_id": "F-C0032-001",
+    //         "fields": [
+    //           {
+    //             "id": "datasetDescription",
+    //             "type": "String"
+    //           },
+    //           {
+    //             "id": "locationName",
+    //             "type": "String"
+    //           },
+    //           {
+    //             "id": "parameterName",
+    //             "type": "String"
+    //           },
+    //           {
+    //             "id": "parameterValue",
+    //             "type": "String"
+    //           },
+    //           {
+    //             "id": "parameterUnit",
+    //             "type": "String"
+    //           },
+    //           {
+    //             "id": "startTime",
+    //             "type": "Timestamp"
+    //           },
+    //           {
+    //             "id": "endTime",
+    //             "type": "Timestamp"
+    //           }
+    //         ]
+    //       }
+    //     }
+    //   })
+    //     .done(function (json) {
+    //       $('<h1>').text(json.title).appendTo('body');
+    //       $('<div class="card1">').html(json.html).appendTo('body');
+    //     })
+    //     // 要求失敗時要執行的程式碼
+    //     // 狀態碼會被傳遞到回調函式的參數
+    //     .fail(function (xhr, status, errorThrown) {
+    //       console.log('出現錯誤，無法完成!')
+    //       console.log('Error: ' + errorThrown)
+    //       console.log('Status: ' + status)
+    //       console.dir(xhr)
+    //     })
+    //     // 不論成功或失敗都會執行的回調函式
+    //     .always(function (xhr, status) {
+    //       console.log('要求已完成!')
+    //     })
+    // })
+    // $(function () {
+    //   $.ajax({
+    //     type: "GET",
+    //     url: "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-0EF10C78-E76B-49E3-BD74-05B21416C3F5&sort=time",
+    //     dataType: "xml",
+    //     error: function (e) {
+    //       console.log('oh no');
+    //     },
+    //     success: function (e) {
+    //       var data = $(e).find('location');
+    //       var num = data.length;
+    //       var time = data.eq(0).find('time').text();
+    //       var city = data.eq(0).find('parameter').eq(0).find('parameterValue').text();
+    //       var town = data.eq(0).find('parameter').eq(2).find('parameterValue').text();
+    //       console.log(time);
+    //       console.log(city);
+    //       console.log(town);
+    //     }
+    //   })
+    // });
+
+
+
+
+    <script>
+    var $div = $('#content');
+    var $select = $('#city');
+    var $btn = $('#btn');
+    $.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-0EF10C78-E76B-49E3-BD74-05B21416C3F5&format=JSON', function (data) {
+      console.log(data);
+    })
+
+  </script>
+
+
+
+
+  // var jqxhr = $.getJSON("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-0EF10C78-E76B-49E3-BD74-05B21416C3F5&format=JSON", function (arr) {   // url是JSON資料的網址，取得的資料存在arr變數中
+      //   console.log("success");   // 請求成功會執行此區塊，可在此處理JSON資料
+      // }).done(function (arr) {
+      //   console.log("second success");   // 另一個請求成功會執行的區塊，也可在此處理JSON資料
+      // }).fail(function () {
+      //   console.log("error");   // 請求失敗會執行這個區塊
+      // }).always(function () {
+      //   console.log("complete");   // 無論請求成功或失敗都會執行的區塊
+      // });
+      // document.getElementById("showData").innerHTML = out;

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            selected:1,  //selected与v-model绑定后，就是value值,数值为几默认选择第几项
+            imgsrc:"https://images.pexels.com/photos/762528/pexels-photo-762528.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+            },
+        methods:{
+            changeimg:function(sortnum){
+                switch(sortnum){
+                case 1:this.imgsrc="https://images.pexels.com/photos/762528/pexels-photo-762528.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+                break;
+                case 2:this.imgsrc="https://images.pexels.com/photos/762080/pexels-photo-762080.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+                break;
+                case 3:this.imgsrc="https://images.pexels.com/photos/761070/pexels-photo-761070.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"
+                break;
+                }
+            }
+        }
+    })
+</script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="pic"> 
+        <img :src=imgsrc>
+    </div>
+<!--<button @click="changeimg(1)">第1张</button><button @click="changeimg(2)">第2张</button>    option则无法添加事件-->
+    <select v-model="selected" @change="changeimg(parseInt(selected))"> 
+      <!--selected需转换成数值型，否则不会响应-->
+        <option value="1">第一张</option>
+        <option value="2">第二张</option>
+        <option value="3">第三张</option>
+    </select>
+</div>
+
+</body>
+
+</html>
